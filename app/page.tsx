@@ -89,7 +89,7 @@ export default function FunnelMath() {
 
     // If around 300-365 videos, that's approximately daily
     if (videosNeeded >= 300) {
-      return "~ Daily"
+      return "Daily"
     }
 
     const monthsBetweenVideos = 12 / videosNeeded
