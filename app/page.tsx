@@ -115,7 +115,7 @@ export default function FunnelMath() {
       isUser: true,
     }
 
-    // Combine user scenario with references
+    // Create all scenarios array
     const allScenarios = [userScenario, ...referenceScenarios.map((s) => ({ ...s, isUser: false }))]
 
     return allScenarios.map((scenario) => {
@@ -124,6 +124,8 @@ export default function FunnelMath() {
       if (funnelConv === 0) {
         return {
           scenario: scenario.name,
+          ctr: scenario.ctr,
+          lpConv: scenario.lpConv,
           funnelConv: 0,
           viewsNeeded: "—",
           videosNeeded: "—",
@@ -138,6 +140,8 @@ export default function FunnelMath() {
 
       return {
         scenario: scenario.name,
+        ctr: scenario.ctr,
+        lpConv: scenario.lpConv,
         funnelConv,
         viewsNeeded,
         videosNeeded,
@@ -332,12 +336,8 @@ export default function FunnelMath() {
                         }`}
                       >
                         <td className="p-4 font-semibold text-[#1A1A1A]">{result.scenario}</td>
-                        <td className="p-4 font-medium text-[#4A4A4A]">
-                          {result.isUser ? globals.userCtr.toFixed(1) : referenceScenarios[index - 1]?.ctr}%
-                        </td>
-                        <td className="p-4 font-medium text-[#4A4A4A]">
-                          {result.isUser ? globals.userLpConv.toFixed(1) : referenceScenarios[index - 1]?.lpConv}%
-                        </td>
+                        <td className="p-4 font-medium text-[#4A4A4A]">{result.ctr.toFixed(1)}%</td>
+                        <td className="p-4 font-medium text-[#4A4A4A]">{result.lpConv.toFixed(1)}%</td>
                         <td className="p-4 font-medium text-[#4A4A4A]">
                           {result.funnelConv === 0 ? "—" : `${(result.funnelConv * 100).toFixed(3)}%`}
                         </td>
