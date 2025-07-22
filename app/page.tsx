@@ -158,7 +158,7 @@ export default function FunnelMath() {
             Creator Income Calculator
           </h1>
           <p className="text-lg text-[#4A4A4A] font-medium max-w-2xl mx-auto">
-            Calculate YouTube revenue scenarios for your creator business
+            Calculate YouTube revenue scenarios for your creator business.
           </p>
         </div>
 
@@ -189,6 +189,7 @@ export default function FunnelMath() {
                   value={globals.price}
                   onChange={(e) => updateGlobal("price", Number(e.target.value))}
                   min="0"
+                  step="10"
                   className="mt-2 text-lg border-[#E8E6E3]"
                 />
               </div>
@@ -202,6 +203,7 @@ export default function FunnelMath() {
                   value={globals.avgViews}
                   onChange={(e) => updateGlobal("avgViews", Number(e.target.value))}
                   min="0"
+                  step="1000"
                   className="mt-2 text-lg border-[#E8E6E3]"
                 />
               </div>
