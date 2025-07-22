@@ -332,7 +332,7 @@ export default function FunnelMath() {
                       <tr
                         key={index}
                         className={`border-b border-[#E8E6E3] hover:bg-[#F9F8F6] transition-colors ${
-                          result.isUser ? "bg-[#F2F0ED] border-[#D4967A]/30 font-semibold" : ""
+                          result.isUser ? "bg-white border-l-4 border-l-[#D4967A] shadow-sm font-semibold" : ""
                         }`}
                       >
                         <td className="p-4 font-semibold text-[#1A1A1A]">{result.scenario}</td>
