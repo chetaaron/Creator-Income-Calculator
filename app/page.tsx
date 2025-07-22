@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -62,16 +60,6 @@ export default function FunnelMath() {
 
   const updateGlobal = (key: keyof GlobalInputs, value: number) => {
     setGlobals((prev) => ({ ...prev, [key]: Math.max(0, value) }))
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, field: keyof GlobalInputs, increment: number) => {
-    if (e.key === "ArrowUp") {
-      e.preventDefault()
-      updateGlobal(field, globals[field] + increment)
-    } else if (e.key === "ArrowDown") {
-      e.preventDefault()
-      updateGlobal(field, Math.max(0, globals[field] - increment))
-    }
   }
 
   const resetToDefaults = () => {
@@ -200,8 +188,8 @@ export default function FunnelMath() {
                   type="number"
                   value={globals.price}
                   onChange={(e) => updateGlobal("price", Number(e.target.value))}
-                  onKeyDown={(e) => handleKeyDown(e, "price", 10)}
                   min="0"
+                  step="10"
                   className="mt-2 text-lg border-[#E8E6E3]"
                 />
               </div>
@@ -214,8 +202,8 @@ export default function FunnelMath() {
                   type="number"
                   value={globals.avgViews}
                   onChange={(e) => updateGlobal("avgViews", Number(e.target.value))}
-                  onKeyDown={(e) => handleKeyDown(e, "avgViews", 1000)}
                   min="0"
+                  step="1000"
                   className="mt-2 text-lg border-[#E8E6E3]"
                 />
               </div>
