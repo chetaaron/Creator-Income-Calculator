@@ -102,6 +102,10 @@ export default function FunnelMath() {
       return weeks === 0 ? "Multiple per week" : `Every ${weeks} week${weeks > 1 ? "s" : ""}`
     } else {
       const days = Math.round(monthsBetweenVideos * 30)
+      // Handle single day case
+      if (days === 1) {
+        return "Daily"
+      }
       return `Every ${days} day${days > 1 ? "s" : ""}`
     }
   }
