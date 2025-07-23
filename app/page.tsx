@@ -31,11 +31,11 @@ const referenceScenarios = [
   { name: "Conservative - Good", ctr: 0.8, lpConv: 2.0 },
   { name: "Realistic - Poor", ctr: 1.0, lpConv: 2.5 },
   { name: "Realistic - Average", ctr: 1.5, lpConv: 3.5 },
-  { name: "Realistic - Good", ctr: 2.0, lpConv: 4.5 },
-  { name: "Optimistic - Average", ctr: 3.0, lpConv: 6.0 },
-  { name: "Optimistic - Excellent", ctr: 4.5, lpConv: 8.0 },
-  { name: "Dream Scenario", ctr: 6.0, lpConv: 10.0 },
-  { name: "Unicorn", ctr: 8.0, lpConv: 12.0 },
+  { name: "Realistic - Good", ctr: 2.0, lpConv: 4.0 },
+  { name: "Optimistic - Average", ctr: 2.5, lpConv: 5.5 },
+  { name: "Optimistic - Excellent", ctr: 3.5, lpConv: 7.0 },
+  { name: "Dream Scenario", ctr: 4.0, lpConv: 9.0 },
+  { name: "Unicorn", ctr: 4.5, lpConv: 10.0 },
 ]
 
 export default function FunnelMath() {
@@ -325,7 +325,7 @@ export default function FunnelMath() {
                     <th className="sticky left-0 z-10 bg-[#F9F8F6] text-left p-4 font-bold text-[#1A1A1A] border-r border-[#E8E6E3] min-w-[140px]">
                       Scenario
                     </th>
-                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[80px]">CTR %</th>
+                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[80px]">YT CTR %</th>
                     <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[90px]">LP Conv %</th>
                     <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[110px]">Overall Conv %</th>
                     <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[120px]">Views Needed</th>
@@ -393,6 +393,21 @@ export default function FunnelMath() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Explainer Section */}
+        <div className="bg-[#F9F8F6] border border-[#E8E6E3] rounded-lg p-6">
+          <p className="text-sm text-[#6A6A6A] leading-relaxed">
+            <span className="font-semibold text-[#4A4A4A]">These numbers are directional, not promises.</span>{" "}
+            Real-world rates swing with three levers:
+            <span className="font-medium"> Niche & intent:</span> Industries convert very differently (education pages
+            median ~8.4% vs. SaaS 3.8%).
+            <span className="font-medium"> Ticket size:</span> Higher prices depress purchase rates; most paid courses
+            sit around 1–3%, with 5% considered "great."
+            <span className="font-medium"> Launch/urgency:</span> Limited-time offers and scarcity can spike conversions
+            temporarily but aren't sustainable. Anything above ~4% CTR or ~9–10% CVR is outlier, launch-spike
+            territory—not a baseline.
+          </p>
+        </div>
 
         {/* Creator Attribution Card */}
         <Card className="bg-white border-[#E8E6E3] shadow-sm">
