@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Creator Income Calculator - Model your creator business",
+        alt: "Creator Income Calculator - Model your creator business with product pricing, video performance, and conversion rates",
       },
     ],
   },
