@@ -38,7 +38,10 @@ export const metadata: Metadata = {
     title: "Creator Income Calculator",
     description:
       "Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue.",
-    images: ["/og-image.png"],
+    images: {
+      url: "/og-image.png",
+      alt: "Creator Income Calculator interface showing business inputs and revenue calculations",
+    },
   },
     generator: 'v0.dev'
 }
@@ -53,6 +56,21 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        {/* Explicit meta tags for better compatibility */}
+        <meta property="og:title" content="Creator Income Calculator" />
+        <meta
+          property="og:description"
+          content="Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue."
+        />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Creator Income Calculator" />
+        <meta
+          name="twitter:description"
+          content="Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue."
+        />
+        <meta name="twitter:image" content="/og-image.png" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
