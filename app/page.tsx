@@ -41,6 +41,8 @@ const referenceScenarios = [
 export default function FunnelMath() {
   const [globals, setGlobals] = useState<GlobalInputs>(defaultGlobals)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [priceDisplay, setPriceDisplay] = useState("")
+  const [avgViewsDisplay, setAvgViewsDisplay] = useState("")
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -57,6 +59,12 @@ export default function FunnelMath() {
       localStorage.setItem("funnelMath-globals", JSON.stringify(globals))
     }
   }, [globals, isLoaded])
+
+  // Sync display values with actual values
+  useEffect(() => {
+    setPriceDisplay(globals.price.toString())
+    setAvgViewsDisplay(globals.avgViews.toString())
+  }, [globals.price, globals.avgViews])
 
   const updateGlobal = (key: keyof GlobalInputs, value: number) => {
     setGlobals((prev) => ({ ...prev, [key]: Math.max(0, value) }))
@@ -202,8 +210,30 @@ export default function FunnelMath() {
                 <Input
                   id="price"
                   type="number"
-                  value={globals.price}
-                  onChange={(e) => updateGlobal("price", Number(e.target.value))}
+                  value={priceDisplay}
+                  onChange={(e) => {
+                    const value = e.target.value
+                    setPriceDisplay(value)
+
+                    if (value === "" || value === "0") {
+                      // Don't update the actual state for empty or just "0"
+                      return
+                    }
+
+                    const numValue = Number.parseFloat(value)
+                    if (!isNaN(numValue) && numValue > 0) {
+                      updateGlobal("price", numValue)
+                    }
+                  }}
+                  onBlur={() => {
+                    // On blur, if empty or 0, reset to actual value
+                    if (priceDisplay === "" || priceDisplay === "0") {
+                      setPriceDisplay(globals.price.toString())
+                    }
+                  }}
+                  onFocus={(e) => {
+                    e.target.select()
+                  }}
                   min="0"
                   step="10"
                   className="mt-2 text-lg border-[#E8E6E3]"
@@ -216,8 +246,30 @@ export default function FunnelMath() {
                 <Input
                   id="avgViews"
                   type="number"
-                  value={globals.avgViews}
-                  onChange={(e) => updateGlobal("avgViews", Number(e.target.value))}
+                  value={avgViewsDisplay}
+                  onChange={(e) => {
+                    const value = e.target.value
+                    setAvgViewsDisplay(value)
+
+                    if (value === "" || value === "0") {
+                      // Don't update the actual state for empty or just "0"
+                      return
+                    }
+
+                    const numValue = Number.parseInt(value, 10)
+                    if (!isNaN(numValue) && numValue > 0) {
+                      updateGlobal("avgViews", numValue)
+                    }
+                  }}
+                  onBlur={() => {
+                    // On blur, if empty or 0, reset to actual value
+                    if (avgViewsDisplay === "" || avgViewsDisplay === "0") {
+                      setAvgViewsDisplay(globals.avgViews.toString())
+                    }
+                  }}
+                  onFocus={(e) => {
+                    e.target.select()
+                  }}
                   min="0"
                   step="1000"
                   className="mt-2 text-lg border-[#E8E6E3]"
