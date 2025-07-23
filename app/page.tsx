@@ -317,13 +317,15 @@ export default function FunnelMath() {
               <table className="w-full">
                 <thead className="bg-[#F9F8F6]">
                   <tr className="border-b border-[#E8E6E3]">
-                    <th className="text-left p-4 font-bold text-[#1A1A1A]">Scenario</th>
-                    <th className="text-left p-4 font-bold text-[#1A1A1A]">CTR %</th>
-                    <th className="text-left p-4 font-bold text-[#1A1A1A]">LP Conv %</th>
-                    <th className="text-left p-4 font-bold text-[#1A1A1A]">Overall Conv %</th>
-                    <th className="text-left p-4 font-bold text-[#1A1A1A]">Views Needed</th>
-                    <th className="text-left p-4 font-bold text-[#1A1A1A]">Videos Needed</th>
-                    <th className="text-left p-4 font-bold text-[#1A1A1A]">Release Frequency</th>
+                    <th className="sticky left-0 z-10 bg-[#F9F8F6] text-left p-4 font-bold text-[#1A1A1A] border-r border-[#E8E6E3] min-w-[140px]">
+                      Scenario
+                    </th>
+                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[80px]">CTR %</th>
+                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[90px]">LP Conv %</th>
+                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[110px]">Overall Conv %</th>
+                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[120px]">Views Needed</th>
+                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[120px]">Videos Needed</th>
+                    <th className="text-left p-4 font-bold text-[#1A1A1A] min-w-[140px]">Release Frequency</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white">
@@ -335,7 +337,13 @@ export default function FunnelMath() {
                           result.isUser ? "bg-white border-l-4 border-l-[#D4967A] shadow-sm font-semibold" : ""
                         }`}
                       >
-                        <td className="p-4 font-semibold text-[#1A1A1A]">{result.scenario}</td>
+                        <td
+                          className={`sticky left-0 z-10 p-4 font-semibold text-[#1A1A1A] border-r border-[#E8E6E3] ${
+                            result.isUser ? "bg-white" : "bg-white hover:bg-[#F9F8F6]"
+                          } transition-colors`}
+                        >
+                          {result.scenario}
+                        </td>
                         <td className="p-4 font-medium text-[#4A4A4A]">{result.ctr.toFixed(1)}%</td>
                         <td className="p-4 font-medium text-[#4A4A4A]">{result.lpConv.toFixed(1)}%</td>
                         <td className="p-4 font-medium text-[#4A4A4A]">
