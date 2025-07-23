@@ -361,8 +361,8 @@ export default function FunnelMath() {
                       </tr>
                       {result.isUser && (
                         <tr className="border-b-2 border-[#D4967A]/40">
-                          {/* Mobile: Show in sticky column */}
-                          <td className="sticky left-0 z-10 bg-[#F9F8F6] p-3 text-left text-sm font-semibold text-[#6A6A6A] border-r border-[#E8E6E3] block md:hidden">
+                          {/* Mobile: Show in sticky column only */}
+                          <td className="sticky left-0 z-10 bg-[#F9F8F6] p-3 text-left text-sm font-semibold text-[#6A6A6A] border-r border-[#E8E6E3] md:hidden">
                             Example Scenarios
                           </td>
                           {/* Desktop: Span all columns */}
@@ -372,13 +372,13 @@ export default function FunnelMath() {
                           >
                             Example Scenarios
                           </td>
-                          {/* Mobile: Empty cells for remaining columns */}
-                          <td className="p-3 bg-[#F9F8F6] block md:hidden"></td>
-                          <td className="p-3 bg-[#F9F8F6] block md:hidden"></td>
-                          <td className="p-3 bg-[#F9F8F6] block md:hidden"></td>
-                          <td className="p-3 bg-[#F9F8F6] block md:hidden"></td>
-                          <td className="p-3 bg-[#F9F8F6] block md:hidden"></td>
-                          <td className="p-3 bg-[#F9F8F6] block md:hidden"></td>
+                          {/* Mobile: Fill remaining columns with invisible content */}
+                          <td className="p-3 bg-[#F9F8F6] md:hidden"></td>
+                          <td className="p-3 bg-[#F9F8F6] md:hidden"></td>
+                          <td className="p-3 bg-[#F9F8F6] md:hidden"></td>
+                          <td className="p-3 bg-[#F9F8F6] md:hidden"></td>
+                          <td className="p-3 bg-[#F9F8F6] md:hidden"></td>
+                          <td className="p-3 bg-[#F9F8F6] md:hidden"></td>
                         </tr>
                       )}
                     </>
