@@ -6,6 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://your-domain.com"), // You'll need to replace this with your actual domain
   title: "Creator Income Calculator",
   description:
     "Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue.",
@@ -24,24 +25,33 @@ export const metadata: Metadata = {
       "Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue.",
     type: "website",
     locale: "en_US",
+    url: "/",
+    siteName: "Creator Income Calculator",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Creator Income Calculator - Model your creator business with product pricing, video performance, and conversion rates",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@ChetCallahan", // Replace with your X handle if different
+    creator: "@ChetCallahan",
     title: "Creator Income Calculator",
     description:
       "Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue.",
-    images: {
-      url: "/og-image.png",
-      alt: "Creator Income Calculator interface showing business inputs and revenue calculations",
-    },
+    images: [
+      {
+        url: "/og-image.png",
+        alt: "Creator Income Calculator interface showing business inputs and revenue calculations",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
     generator: 'v0.dev'
 }
@@ -56,21 +66,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-        {/* Explicit meta tags for better compatibility */}
-        <meta property="og:title" content="Creator Income Calculator" />
-        <meta
-          property="og:description"
-          content="Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue."
-        />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Creator Income Calculator" />
-        <meta
-          name="twitter:description"
-          content="Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue."
-        />
-        <meta name="twitter:image" content="/og-image.png" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
