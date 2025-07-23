@@ -11,18 +11,30 @@ export const metadata: Metadata = {
     "Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue.",
   keywords: ["creator", "youtube", "income calculator", "revenue", "business model", "conversion rates"],
   authors: [{ name: "Chet Callahan" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Creator Income Calculator",
     description:
       "Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Creator Income Calculator - Model your creator business",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Creator Income Calculator",
     description:
       "Model your creator business – test how product pricing, video performance, conversion rates and posting schedule shape your path to revenue.",
+    images: ["/og-image.png"],
   },
     generator: 'v0.dev'
 }
