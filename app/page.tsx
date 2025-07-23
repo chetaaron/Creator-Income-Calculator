@@ -169,7 +169,7 @@ export default function FunnelMath() {
             Creator Income Calculator
           </h1>
           <p className="text-lg text-[#4A4A4A] font-medium max-w-2xl mx-auto">
-            Calculate YouTube revenue scenarios for your creator business.
+            Play out YouTube revenue scenarios for your creator business.
           </p>
         </div>
 
