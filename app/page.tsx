@@ -449,15 +449,17 @@ export default function FunnelMath() {
         {/* Explainer Section */}
         <div className="bg-[#F9F8F6] border border-[#E8E6E3] rounded-lg p-6">
           <p className="text-sm text-[#6A6A6A] leading-relaxed">
-            <span className="font-semibold text-[#4A4A4A]">These numbers are directional, not promises.</span>{" "}
-            Real-world rates swing with three levers:
-            <span className="font-medium"> Niche & intent:</span> Industries convert very differently (education pages
-            median ~8.4% vs. SaaS 3.8%).
-            <span className="font-medium"> Ticket size:</span> Higher prices depress purchase rates; most paid courses
-            sit around 1–3%, with 5% considered "great."
-            <span className="font-medium"> Launch/urgency:</span> Limited-time offers and scarcity can spike conversions
-            temporarily but aren't sustainable. Anything above ~4% CTR or ~9–10% CVR is outlier, launch-spike
-            territory—not a baseline.
+            <span className="font-semibold text-[#4A4A4A]">
+              Important: These scenarios are intentionally optimistic to help you understand the math.
+            </span>{" "}
+            In reality, expect significantly lower numbers across the board.
+            <span className="font-medium"> Most creators see:</span> 0.5–1.5% CTR from YouTube to landing page, and 1–3%
+            landing page conversion (with 5% being exceptional).
+            <span className="font-medium"> The scenarios above</span> use elevated rates (1–4.5% CTR, 1–10% CVR) to
+            illustrate how different performance levels impact your business model.
+            <span className="font-medium"> Why show higher numbers?</span> To demonstrate the relationship between
+            conversion rates and content volume—not to set unrealistic expectations. Start conservative, measure your
+            actual rates, and adjust your strategy accordingly.
           </p>
         </div>
 
